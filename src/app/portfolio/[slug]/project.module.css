@@ -1,20 +1,26 @@
 .page {
   min-height: 100vh;
+  padding-top: 72px;
   background:
     radial-gradient(circle at 8% 10%, rgba(72, 42, 152, 0.2), transparent 31rem),
     linear-gradient(105deg, #0e0d1f 0%, #07070f 54%, #030305 100%);
 }
 
 .header {
-  position: sticky;
+  position: fixed;
   z-index: 20;
   top: 0;
+  left: 50%;
   width: min(1180px, 100%);
   margin: 0 auto;
   border-radius: 0 0 42px 42px;
-  background: rgba(19, 19, 37, 0.92);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.045);
+  border-top: 0;
+  background: rgba(17, 17, 35, 0.72);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
 }
 
 .nav {
@@ -103,21 +109,6 @@
   color: #7e7b8c;
   font-size: 0.83rem;
   letter-spacing: 0.15em;
-}
-
-.heroImage {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 808 / 632;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  background: var(--surface);
-  box-shadow: 0 34px 85px rgba(0, 0, 0, 0.34);
-}
-
-.heroImage img {
-  object-fit: cover;
 }
 
 .details {
@@ -224,10 +215,6 @@
 
   .index {
     grid-row: 1;
-  }
-
-  .heroImage {
-    border-radius: 17px;
   }
 
   .details {

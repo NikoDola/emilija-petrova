@@ -73,17 +73,6 @@ export default async function ProjectPage({ params }) {
           </p>
         </div>
 
-        <div className={styles.heroImage}>
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            loading="eager"
-            fetchPriority="high"
-            sizes="(max-width: 900px) 100vw, 1180px"
-          />
-        </div>
-
         <div className={styles.details}>
           <p className={styles.detailLabel}>Project overview</p>
           <p className={styles.description}>{project.description}</p>
