@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "./portfolio-data";
+import ExperienceCounter from "./experience-counter";
 import HomeNavigation from "./home-navigation";
 import ScrollToTop from "./scroll-to-top";
 import styles from "./page.module.css";
@@ -50,10 +51,25 @@ function ArrowUpRight() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function Portrait({ eager = false }) {
+function Portrait({ eager = false, showSoftwareOrbit = false }) {
   return (
     <div className={styles.portraitWrap}>
       <span className={styles.portraitGlow} aria-hidden="true" />
+      {showSoftwareOrbit && (
+        <div className={styles.softwareOrbit} aria-hidden="true">
+          {softwares.map((software, index) => (
+            <span
+              className={styles.softwareOrbitTrack}
+              style={{ "--orbit-delay": `${index * -4.4}s` }}
+              key={software.name}
+            >
+              <span className={styles.softwareOrbitIcon}>
+                <Image src={software.icon} alt="" width={44} height={44} />
+              </span>
+            </span>
+          ))}
+        </div>
+      )}
       <Image
         className={styles.portrait}
         src="/images/personal/profile-image.avif"
@@ -115,7 +131,7 @@ export default function Home() {
             </div>
           </div>
 
-          <Portrait eager />
+          <Portrait eager showSoftwareOrbit />
         </section>
 
         <section className={`${styles.section} ${styles.services}`} id="services">
@@ -158,7 +174,7 @@ export default function Home() {
 
               <div className={styles.aboutStats}>
                 <div className={styles.experienceCard}>
-                  <strong>5</strong>
+                  <ExperienceCounter target={5} />
                   <span>Years<br />Experience</span>
                 </div>
                 <div className={styles.programCard}>
