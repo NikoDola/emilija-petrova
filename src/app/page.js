@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "./portfolio-data";
+import HomeNavigation from "./home-navigation";
+import ScrollToTop from "./scroll-to-top";
 import styles from "./page.module.css";
 
 const services = [
@@ -20,7 +22,7 @@ const services = [
     title: "Social Media",
     description:
       "Social media posts, stories, campaign sets, digital ads, and promotional content.",
-    icon: "/images/personal/marketing-icon.svg",
+    icon: "/images/personal/social-media-icon.svg",
   },
   {
     title: "Print Design",
@@ -36,7 +38,7 @@ const services = [
   },
 ];
 
-const programs = [
+const softwares = [
   { name: "Adobe Photoshop", icon: "/images/personal/adobe-photoshop-icon.svg" },
   { name: "Adobe Illustrator", icon: "/images/personal/adobe-illustrator-icon.svg" },
   { name: "Adobe After Effects", icon: "/images/personal/adobe-after-effect-icon.svg" },
@@ -48,6 +50,24 @@ function ArrowUpRight() {
   return <span aria-hidden="true">↗</span>;
 }
 
+function Portrait({ eager = false }) {
+  return (
+    <div className={styles.portraitWrap}>
+      <span className={styles.portraitGlow} aria-hidden="true" />
+      <Image
+        className={styles.portrait}
+        src="/images/personal/profile-image.avif"
+        alt="Emilija Petrova"
+        width={480}
+        height={620}
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : undefined}
+        sizes="(max-width: 720px) 78vw, 430px"
+      />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className={styles.page}>
@@ -56,29 +76,11 @@ export default function Home() {
       </a>
 
       <header className={styles.siteHeader}>
-        <nav className={styles.nav} aria-label="Main navigation">
-          <a className={styles.logoLink} href="#home" aria-label="Emilija Petrova, home">
-            <Image
-              src="/images/personal/logo.svg"
-              alt=""
-              width={66}
-              height={64}
-              priority
-            />
-          </a>
-          <div className={styles.navLinks}>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+        <HomeNavigation />
       </header>
 
       <div id="main-content">
         <section className={`${styles.section} ${styles.hero}`} id="home">
-          <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Hello, I am</p>
             <h1>Emilija Petrova</h1>
@@ -91,12 +93,7 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="Emilija Petrova on Behance"
               >
-                <Image
-                  src="/images/personal/social-behance.svg"
-                  alt=""
-                  width={45}
-                  height={45}
-                />
+                <Image src="/images/personal/social-behance.svg" alt="" width={40} height={40} />
               </a>
               <a
                 href="https://www.linkedin.com/in/petrovaemilija/"
@@ -104,12 +101,7 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="Emilija Petrova on LinkedIn"
               >
-                <Image
-                  src="/images/personal/social-linkedin.svg"
-                  alt=""
-                  width={48}
-                  height={48}
-                />
+                <Image src="/images/personal/social-linkedin.svg" alt="" width={42} height={42} />
               </a>
             </div>
 
@@ -117,38 +109,19 @@ export default function Home() {
               <a className={styles.primaryButton} href="#contact">
                 Let&apos;s connect
               </a>
-              <a
-                className={styles.secondaryButton}
-                href="/emilija-petrova-cv.pdf"
-                download
-              >
-                Download CV
-                <span aria-hidden="true">↓</span>
+              <a className={styles.secondaryButton} href="/emilija-petrova-cv.pdf" download>
+                Download CV <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
 
-          <div className={styles.portraitWrap}>
-            <div className={styles.portraitHalo} aria-hidden="true" />
-            <Image
-              className={styles.portrait}
-              src="/images/personal/profile-image.avif"
-              alt="Emilija Petrova"
-              width={480}
-              height={620}
-              priority
-            />
-          </div>
+          <Portrait eager />
         </section>
 
         <section className={`${styles.section} ${styles.services}`} id="services">
           <div className={styles.sectionHeading}>
-            <p className={styles.sectionKicker}>What I do</p>
             <h2>Services</h2>
-            <p>
-              Creative design solutions focused on strong, consistent, and memorable
-              visual identities.
-            </p>
+            <p>Creative design solutions focused on strong, consistent and memorable visual identities.</p>
           </div>
 
           <div className={styles.servicesGrid}>
@@ -166,23 +139,20 @@ export default function Home() {
         <section className={`${styles.section} ${styles.about}`} id="about">
           <div className={styles.aboutContent}>
             <div className={styles.aboutCopy}>
-              <div className={styles.leftHeading}>
-                <p className={styles.sectionKicker}>The person behind the work</p>
-                <h2>About me</h2>
-              </div>
+              <h2>About me</h2>
               <div className={styles.aboutPanel}>
                 <p>
-                  I&apos;m a graphic and visual designer with a strong interest in
-                  branding, visual identity, and marketing design.
+                  I&apos;m a graphic and visual designer with a strong interest in branding,
+                  visual identity and marketing design.
                 </p>
                 <p>
-                  Over the years, I&apos;ve worked across digital, print, social media,
-                  and promotional campaigns, always focusing on creating visuals that
-                  are clear, consistent, and visually engaging.
+                  Over the years, I&apos;ve worked across digital, print, social media and
+                  promotional campaigns, always focusing on creating visuals that are clear,
+                  consistent and visually engaging.
                 </p>
                 <p>
-                  I enjoy exploring new ideas, developing strong concepts, and
-                  continuously evolving my skills as a designer.
+                  I enjoy exploring new ideas, developing strong concepts and continuously
+                  evolving my skills as a designer.
                 </p>
               </div>
 
@@ -193,68 +163,51 @@ export default function Home() {
                 </div>
                 <div className={styles.programCard}>
                   <div className={styles.programIcons}>
-                    {programs.map((program) => (
+                    {softwares.map((software) => (
                       <Image
-                        key={program.name}
-                        src={program.icon}
-                        alt={program.name}
-                        title={program.name}
+                        key={software.name}
+                        src={software.icon}
+                        alt={software.name}
+                        title={software.name}
                         width={43}
                         height={43}
                       />
                     ))}
                   </div>
-                  <span>Programs</span>
+                  <span>Softwares</span>
                 </div>
               </div>
             </div>
 
-            <div className={`${styles.portraitWrap} ${styles.aboutPortrait}`}>
-              <div className={styles.portraitHalo} aria-hidden="true" />
-              <Image
-                className={styles.portrait}
-                src="/images/personal/profile-image.avif"
-                alt="Emilija Petrova"
-                width={480}
-                height={620}
-              />
+            <div className={styles.aboutPortrait}>
+              <Portrait />
             </div>
           </div>
         </section>
 
         <section className={`${styles.section} ${styles.portfolio}`} id="portfolio">
           <div className={styles.sectionHeading}>
-            <p className={styles.sectionKicker}>Selected work</p>
             <h2>Portfolio</h2>
-            <p>A selection of identity, logo, campaign, and visual design projects.</p>
+            <p>A selection of identity, logo, campaign and visual design projects.</p>
           </div>
 
           <div className={styles.portfolioGrid}>
-            {projects.map((project, index) => (
-              <Link
-                className={styles.projectCard}
-                href={`/portfolio/${project.slug}`}
-                key={project.slug}
-              >
+            {projects.map((project) => (
+              <Link className={styles.projectCard} href={`/portfolio/${project.slug}`} key={project.slug}>
                 <div className={styles.projectImage}>
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt=""
                     fill
-                    sizes="(max-width: 720px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                    sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 340px"
                   />
-                  <span className={styles.projectNumber}>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                 </div>
                 <div className={styles.projectInfo}>
                   <div>
-                    <p>{project.category}</p>
                     <h3>{project.cardTitle}</h3>
+                    <p>{project.category}</p>
                   </div>
-                  <span className={styles.projectArrow} aria-hidden="true">
-                    ↗
-                  </span>
+                  <ArrowUpRight />
                 </div>
               </Link>
             ))}
@@ -263,10 +216,9 @@ export default function Home() {
 
         <section className={`${styles.section} ${styles.contact}`} id="contact">
           <div className={styles.contactContent}>
-            <p className={styles.sectionKicker}>Start a conversation</p>
             <h2>Contact</h2>
             <p className={styles.contactIntro}>
-              Have a project in mind or want to work together?
+              Have a project on mind or want to work together?
               <br />
               Let&apos;s <span>get in touch.</span>
             </p>
@@ -284,31 +236,13 @@ export default function Home() {
             </div>
 
             <div className={styles.contactSocials}>
-              <a
-                href="https://www.behance.net/emilijapetrova"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Image
-                  src="/images/personal/social-behance.svg"
-                  alt=""
-                  width={34}
-                  height={34}
-                />
+              <a href="https://www.behance.net/emilijapetrova" target="_blank" rel="noreferrer">
+                <Image src="/images/personal/social-behance.svg" alt="" width={32} height={32} />
                 Behance
                 <ArrowUpRight />
               </a>
-              <a
-                href="https://www.linkedin.com/in/petrovaemilija/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Image
-                  src="/images/personal/social-linkedin.svg"
-                  alt=""
-                  width={34}
-                  height={34}
-                />
+              <a href="https://www.linkedin.com/in/petrovaemilija/" target="_blank" rel="noreferrer">
+                <Image src="/images/personal/social-linkedin.svg" alt="" width={32} height={32} />
                 LinkedIn
                 <ArrowUpRight />
               </a>
@@ -328,10 +262,11 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        <Image src="/images/personal/logo.svg" alt="" width={34} height={34} />
+        <Image src="/images/personal/logo.svg" alt="" width={27} height={27} />
         <p>© {new Date().getFullYear()} Emilija Petrova</p>
         <a href="#home">Back to top ↑</a>
       </footer>
+      <ScrollToTop />
     </main>
   );
 }

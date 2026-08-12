@@ -1,0 +1,40 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 30px;
+  text-align: center;
+  background:
+    radial-gradient(circle, rgba(70, 42, 150, 0.22), transparent 28rem),
+    #07070e;
+}
+
+.page p {
+  color: var(--cyan);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.page h1 {
+  max-width: 620px;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.page a {
+  margin-top: 12px;
+  padding: 13px 18px;
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.page a:hover {
+  color: #071017;
+  background: var(--cyan);
+}

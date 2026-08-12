@@ -1,27 +1,28 @@
 .page {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 14% 12%, rgba(74, 44, 155, 0.22), transparent 30rem),
-    #06070d;
+    radial-gradient(circle at 8% 10%, rgba(72, 42, 152, 0.2), transparent 31rem),
+    linear-gradient(105deg, #0e0d1f 0%, #07070f 54%, #030305 100%);
 }
 
 .header {
   position: sticky;
-  z-index: 10;
+  z-index: 20;
   top: 0;
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, 100%);
   margin: 0 auto;
-  border-radius: 0 0 32px 32px;
-  background: rgba(18, 18, 37, 0.9);
+  border-radius: 0 0 42px 42px;
+  background: rgba(19, 19, 37, 0.92);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(18px);
 }
 
 .nav {
   display: flex;
-  min-height: 76px;
+  min-height: 72px;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 9px clamp(22px, 5vw, 58px);
 }
 
 .nav > a {
@@ -31,13 +32,13 @@
 .nav > div {
   display: flex;
   align-items: center;
-  gap: 30px;
-  color: #d6d5df;
-  font-size: 0.95rem;
+  gap: 28px;
+  color: #d8d6e0;
+  font-size: 0.92rem;
 }
 
 .nav a {
-  transition: color 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .nav a:hover {
@@ -45,63 +46,63 @@
 }
 
 .contactLink {
-  padding: 11px 18px;
-  border: 1px solid rgba(49, 188, 232, 0.6);
-  border-radius: 10px;
+  padding: 10px 17px;
+  border: 1px solid rgba(53, 189, 230, 0.7);
+  border-radius: 8px;
 }
 
 .project {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1120px, calc(100% - 44px));
   margin: 0 auto;
-  padding: 76px 0 100px;
+  padding: 70px 0 100px;
 }
 
 .backLink {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 54px;
+  margin-bottom: 50px;
   color: var(--muted);
-  font-size: 0.94rem;
-  transition: color 180ms ease, transform 180ms ease;
+  font-size: 0.92rem;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .backLink:hover {
   color: var(--cyan);
-  transform: translateX(-3px);
+  background: rgba(53, 189, 230, 0.08);
 }
 
 .titleRow {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 30px;
+  gap: 32px;
   align-items: end;
-  margin-bottom: 48px;
+  margin-bottom: 42px;
 }
 
 .category,
 .detailLabel {
   margin-bottom: 14px;
   color: var(--cyan);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
 }
 
 .titleRow h1 {
-  max-width: 900px;
-  font-size: clamp(2.5rem, 6.5vw, 5.8rem);
-  font-weight: 680;
+  max-width: 920px;
+  font-size: clamp(2.55rem, 6.3vw, 5.6rem);
+  font-weight: 700;
   letter-spacing: -0.055em;
-  line-height: 0.98;
+  line-height: 0.99;
   text-wrap: balance;
 }
 
 .index {
-  color: #79788b;
-  font-size: 0.86rem;
-  letter-spacing: 0.16em;
+  color: #7e7b8c;
+  font-size: 0.83rem;
+  letter-spacing: 0.15em;
 }
 
 .heroImage {
@@ -112,7 +113,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   background: var(--surface);
-  box-shadow: 0 38px 90px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 34px 85px rgba(0, 0, 0, 0.34);
 }
 
 .heroImage img {
@@ -120,37 +121,29 @@
 }
 
 .details {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 64px;
-  align-items: end;
-  padding: 54px 0 84px;
+  padding: 52px 0 80px;
 }
 
 .description {
-  max-width: 700px;
-  color: #d0cfda;
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  max-width: 690px;
+  color: #d0ced9;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.65;
 }
 
-.behanceLink {
-  display: inline-flex;
-  min-height: 50px;
-  align-items: center;
-  gap: 16px;
-  padding: 0 20px;
-  border: 1px solid var(--cyan);
-  border-radius: 10px;
-  color: #f7f7fb;
-  white-space: nowrap;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+.gallery {
+  overflow: hidden;
+  margin-bottom: 84px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background: #08080d;
+  box-shadow: 0 34px 85px rgba(0, 0, 0, 0.28);
 }
 
-.behanceLink:hover {
-  color: #061017;
-  background: var(--cyan);
-  transform: translateY(-2px);
+.galleryImage {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .nextProject {
@@ -158,21 +151,21 @@
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  padding: 36px 0;
+  padding: 34px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.13);
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  font-size: clamp(1.3rem, 3vw, 2.1rem);
-  transition: color 180ms ease, padding 180ms ease;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .nextProject span {
   display: grid;
-  gap: 8px;
+  gap: 9px;
 }
 
 .nextProject small {
   color: var(--cyan);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -180,29 +173,32 @@
 
 .nextProject strong {
   color: var(--cyan);
-  font-size: 2.3rem;
+  font-size: 2.25rem;
 }
 
 .nextProject:hover {
   color: var(--cyan);
-  padding-right: 10px;
-  padding-left: 10px;
+  background: rgba(53, 189, 230, 0.06);
 }
 
 @media (max-width: 720px) {
-  .header,
-  .project {
-    width: min(100% - 24px, 1180px);
+  .header {
+    border-radius: 0 0 28px 28px;
   }
 
   .nav {
-    min-height: 68px;
+    min-height: 66px;
     padding: 8px 16px;
   }
 
+  .nav > a img {
+    width: 39px;
+    height: auto;
+  }
+
   .nav > div {
-    gap: 16px;
-    font-size: 0.84rem;
+    gap: 15px;
+    font-size: 0.82rem;
   }
 
   .contactLink {
@@ -210,20 +206,20 @@
   }
 
   .project {
-    padding-top: 46px;
+    width: min(100% - 28px, 1120px);
+    padding-top: 48px;
   }
 
   .backLink {
     margin-bottom: 38px;
   }
 
-  .titleRow,
-  .details {
+  .titleRow {
     grid-template-columns: 1fr;
   }
 
   .titleRow {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   .index {
@@ -231,18 +227,15 @@
   }
 
   .heroImage {
-    border-radius: 18px;
+    border-radius: 17px;
   }
 
   .details {
-    gap: 30px;
     padding: 38px 0 60px;
   }
 
-  .behanceLink {
-    width: 100%;
-    justify-content: center;
-    white-space: normal;
-    text-align: center;
+  .gallery {
+    margin-bottom: 60px;
+    border-radius: 17px;
   }
 }

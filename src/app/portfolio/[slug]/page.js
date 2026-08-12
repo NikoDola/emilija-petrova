@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "../../portfolio-data";
+import ScrollToTop from "../../scroll-to-top";
 import styles from "./project.module.css";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -41,9 +44,9 @@ export default async function ProjectPage({ params }) {
             <Image
               src="/images/personal/logo.svg"
               alt=""
-              width={52}
-              height={50}
-              priority
+              width={48}
+              height={47}
+              loading="eager"
             />
           </Link>
           <div>
@@ -75,24 +78,31 @@ export default async function ProjectPage({ params }) {
             src={project.image}
             alt={project.title}
             fill
-            priority
-            sizes="(max-width: 900px) 100vw, 1200px"
+            loading="eager"
+            fetchPriority="high"
+            sizes="(max-width: 900px) 100vw, 1180px"
           />
         </div>
 
         <div className={styles.details}>
-          <div>
-            <p className={styles.detailLabel}>Project overview</p>
-            <p className={styles.description}>{project.description}</p>
-          </div>
-          <a
-            className={styles.behanceLink}
-            href={project.behanceUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            View full project on Behance <span aria-hidden="true">↗</span>
-          </a>
+          <p className={styles.detailLabel}>Project overview</p>
+          <p className={styles.description}>{project.description}</p>
+        </div>
+
+        <div className={styles.gallery} aria-label={`${project.title} project gallery`}>
+          {project.galleryHeights.map((height, index) => (
+            <Image
+              className={styles.galleryImage}
+              src={`/images/projects/${project.slug}/${String(index + 1).padStart(2, "0")}.jpg`}
+              alt={`${project.title}, project image ${index + 1}`}
+              width={1400}
+              height={height}
+              sizes="(max-width: 1160px) 100vw, 1120px"
+              loading={index === 0 ? "eager" : "lazy"}
+              unoptimized
+              key={`${project.slug}-${index + 1}`}
+            />
+          ))}
         </div>
 
         <Link className={styles.nextProject} href={`/portfolio/${nextProject.slug}`}>
@@ -103,6 +113,7 @@ export default async function ProjectPage({ params }) {
           <strong aria-hidden="true">→</strong>
         </Link>
       </article>
+      <ScrollToTop />
     </main>
   );
 }

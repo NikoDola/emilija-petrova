@@ -2,24 +2,22 @@ export const projects = [
   {
     slug: "ks-group-brand-identity",
     cardTitle: "KS Group — Brand Identity System",
-    title: "КС Групација (KS Group) — Brand Identity System",
+    title: "KS Group — Brand Identity System",
     category: "Brand Identity",
     image: "/images/portfolio/ks-group.jpg",
-    behanceUrl:
-      "https://www.behance.net/gallery/253592711/ks-grupacia-(KS-Group)-Brand-Identity-System",
     description:
-      "A complete identity direction built to give KS Group a clear, confident, and consistent presence across its brand touchpoints.",
+      "A complete identity direction built to give KS Group a clear, confident and consistent presence across its brand touchpoints.",
+    galleryHeights: [1472, 1013, 1013, 1013, 1013, 1013, 1013, 2270, 2075, 1013, 1013, 231],
   },
   {
     slug: "gold-felicia-photo-editing",
     cardTitle: "Gold Felicia — Photo Editing & Design",
     title: "Photo Editing & Design — Gold Felicia Cabaret Artists",
-    category: "Photo Editing",
+    category: "Photo Editing & Design",
     image: "/images/portfolio/gold-felicia.jpg",
-    behanceUrl:
-      "https://www.behance.net/gallery/251669655/Photo-Editing-Design-Gold-Felicia-Cabaret-Artists",
     description:
-      "A theatrical image-editing and visual design project shaped around the expressive, high-energy world of Gold Felicia’s cabaret artists.",
+      "A theatrical image-editing and visual design project shaped around the expressive, high-energy world of Gold Felicia's cabaret artists.",
+    galleryHeights: [8178],
   },
   {
     slug: "evrotip-anniversary-mark",
@@ -27,10 +25,9 @@ export const projects = [
     title: "Evrotip — 10 Years Anniversary Mark",
     category: "Logo Design",
     image: "/images/portfolio/evrotip.jpg",
-    behanceUrl:
-      "https://www.behance.net/gallery/251347369/Evrotip-10-Years-Anniversary-Mark",
     description:
-      "A celebratory anniversary mark that brings Evrotip’s decade milestone and football identity together in one memorable symbol.",
+      "A celebratory anniversary mark that brings Evrotip's decade milestone and football identity together in one memorable symbol.",
+    galleryHeights: [1569, 798, 1698],
   },
   {
     slug: "valshift-visual-identity",
@@ -38,10 +35,9 @@ export const projects = [
     title: "Valshift — Visual Identity Design",
     category: "Visual Identity",
     image: "/images/portfolio/valshift.jpg",
-    behanceUrl:
-      "https://www.behance.net/gallery/251345701/Valshift-Visual-Identity-Design",
     description:
       "A contemporary visual identity for a technology-led brand, balancing a precise digital feel with an approachable visual voice.",
+    galleryHeights: [1374, 1085, 1085, 108, 1011, 1170, 276],
   },
   {
     slug: "delov-photography-logo",
@@ -49,10 +45,9 @@ export const projects = [
     title: "Wedding Photographer — Logo Design",
     category: "Logo Design",
     image: "/images/portfolio/wedding-photographer.jpg",
-    behanceUrl:
-      "https://www.behance.net/gallery/251342597/Wedding-Photographer-Logo-Design",
     description:
-      "An elegant, editorial logo system created for a wedding photographer, designed to feel personal, refined, and timeless.",
+      "An elegant, editorial logo system created for a wedding photographer, designed to feel personal, refined and timeless.",
+    galleryHeights: [7560],
   },
   {
     slug: "premium-safety-solution",
@@ -60,10 +55,9 @@ export const projects = [
     title: "Premium Safety Solution — Branding & Social Media",
     category: "Branding & Social Media",
     image: "/images/portfolio/premium-safety.jpg",
-    behanceUrl:
-      "https://www.behance.net/gallery/216343755/Premium-Safety-Solution-(Branding-Social-Media)",
     description:
       "A cohesive brand and social media direction for a safety specialist, translating technical expertise into clear and trustworthy communication.",
+    galleryHeights: [8271],
   },
 ];
 

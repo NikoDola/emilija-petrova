@@ -1,4 +1,22 @@
+import localFont from "next/font/local";
 import "./globals.css";
+
+const dmSans = localFont({
+  src: [
+    {
+      path: "./fonts/DMSans-Variable.ttf",
+      weight: "100 1000",
+      style: "normal",
+    },
+    {
+      path: "./fonts/DMSans-Italic-Variable.ttf",
+      weight: "100 1000",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
 
 export const metadata = {
   title: {
@@ -6,22 +24,17 @@ export const metadata = {
     template: "%s | Emilija Petrova",
   },
   description:
-    "Portfolio of Emilija Petrova, a graphic and visual designer specializing in branding, identity, marketing, print, and digital design.",
-  icons: {
-    icon: "/images/personal/logo.svg",
-    shortcut: "/images/personal/logo.svg",
-    apple: "/images/personal/logo.svg",
-  },
+    "Portfolio of Emilija Petrova, a graphic and visual designer specializing in branding, identity, marketing, print and digital design.",
 };
 
 export const viewport = {
-  themeColor: "#090a13",
+  themeColor: "#080811",
   colorScheme: "dark",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={dmSans.variable}>
       <body>{children}</body>
     </html>
   );
