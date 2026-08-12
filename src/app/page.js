@@ -47,6 +47,31 @@ const softwares = [
   { name: "Figma", icon: "/images/personal/figma-icon.svg" },
 ];
 
+const orbitPoints = softwares.map((_, index) => {
+  const angle = (index * Math.PI * 2) / softwares.length;
+
+  return {
+    x: 50 + Math.cos(angle) * 50,
+    y: 50 + Math.sin(angle) * 50,
+  };
+});
+
+const softwareConnections = softwares.flatMap((software, fromIndex) =>
+  softwares.slice(fromIndex + 1).map((targetSoftware, relativeIndex) => {
+    const toIndex = fromIndex + relativeIndex + 1;
+
+    return {
+      from: orbitPoints[fromIndex],
+      key: `${software.name}-${targetSoftware.name}`,
+      strength:
+        software.name.startsWith("Adobe") && targetSoftware.name.startsWith("Adobe")
+          ? "strong"
+          : "subtle",
+      to: orbitPoints[toIndex],
+    };
+  }),
+);
+
 function ArrowUpRight() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -57,6 +82,27 @@ function Portrait({ eager = false, showSoftwareOrbit = false }) {
       <span className={styles.portraitGlow} aria-hidden="true" />
       {showSoftwareOrbit && (
         <div className={styles.softwareOrbit} aria-hidden="true">
+          <svg
+            className={styles.softwareConnections}
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            {softwareConnections.map((connection) => (
+              <line
+                className={
+                  connection.strength === "strong"
+                    ? styles.softwareConnectionStrong
+                    : styles.softwareConnectionSubtle
+                }
+                x1={connection.from.x}
+                y1={connection.from.y}
+                x2={connection.to.x}
+                y2={connection.to.y}
+                vectorEffect="non-scaling-stroke"
+                key={connection.key}
+              />
+            ))}
+          </svg>
           {softwares.map((software, index) => (
             <span
               className={styles.softwareOrbitTrack}
@@ -78,6 +124,14 @@ function Portrait({ eager = false, showSoftwareOrbit = false }) {
         height={620}
         loading={eager ? "eager" : "lazy"}
         fetchPriority={eager ? "high" : undefined}
+        sizes="(max-width: 720px) 78vw, 430px"
+      />
+      <Image
+        className={styles.neonLine}
+        src="/images/personal/neon-line.avif"
+        alt=""
+        width={815}
+        height={165}
         sizes="(max-width: 720px) 78vw, 430px"
       />
     </div>
