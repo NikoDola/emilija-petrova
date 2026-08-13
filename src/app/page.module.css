@@ -161,7 +161,7 @@
   place-items: center;
   border-radius: 5px;
   background: #f5f5f7;
-  transition: background-color 180ms ease, filter 180ms ease;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .heroSocials img {
@@ -169,11 +169,19 @@
   height: 29px;
   object-fit: contain;
   filter: brightness(0) saturate(100%);
+  transition: filter 180ms ease;
 }
 
-.heroSocials a:hover {
-  background: #c9f3ff;
-  filter: brightness(1.08);
+.heroSocials a:hover,
+.heroSocials a:focus-visible {
+  background: linear-gradient(110deg, #49298a, #188ec5);
+  box-shadow: 0 8px 22px rgba(24, 142, 197, 0.34);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.heroSocials a:hover img,
+.heroSocials a:focus-visible img {
+  filter: brightness(0) invert(1);
 }
 
 .heroActions {
