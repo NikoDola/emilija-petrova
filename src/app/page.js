@@ -9,30 +9,35 @@ import styles from "./page.module.css";
 const services = [
   {
     title: "Branding & Logo Design",
+    titleLines: ["Branding &", "Logo Design"],
     description:
       "Logo design, visual identity, brand elements, color and typography systems, and basic brand guidelines.",
     icon: "/images/personal/brand-icon.svg",
   },
   {
     title: "Marketing Design",
+    titleLines: ["Marketing", "Design"],
     description:
       "Campaign visuals, promotional materials, event campaigns, advertising creatives, and banners.",
     icon: "/images/personal/marketing-icon.svg",
   },
   {
     title: "Social Media",
+    titleLines: ["Social", "Media"],
     description:
       "Social media posts, stories, campaign sets, digital ads, and promotional content.",
     icon: "/images/personal/social-media-icon.svg",
   },
   {
     title: "Print Design",
+    titleLines: ["Print", "Design"],
     description:
       "Menus, flyers, posters, brochures, invitations, promotional print, and editorial materials.",
     icon: "/images/personal/print-design-icon.svg",
   },
   {
     title: "Digital & Web Visual Design",
+    titleLines: ["Digital & Web", "Visual Design"],
     description:
       "Website visuals, landing pages, web banners, UI visual concepts, and digital experiences.",
     icon: "/images/personal/digital-web-cion.svg",
@@ -198,7 +203,11 @@ export default function Home() {
             {services.map((service) => (
               <article className={styles.serviceCard} key={service.title}>
                 <Image src={service.icon} alt="" width={74} height={74} />
-                <h3>{service.title}</h3>
+                <h3>
+                  {service.titleLines[0]}
+                  <br />
+                  {service.titleLines[1]}
+                </h3>
                 <span className={styles.cardLine} aria-hidden="true" />
                 <p>{service.description}</p>
               </article>
