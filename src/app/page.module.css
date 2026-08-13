@@ -807,10 +807,10 @@
 .contactMark {
   position: absolute;
   z-index: 0;
-  top: 10%;
-  right: 0;
-  width: min(22vw, 600px);
-  opacity: 0.8;
+  top: 18%;
+  right: -5vw;
+  width: min(30vw, 600px);
+  opacity: 0.94;
   pointer-events: none;
 }
 
