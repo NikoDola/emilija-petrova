@@ -199,6 +199,7 @@ export default function Home() {
               <article className={styles.serviceCard} key={service.title}>
                 <Image src={service.icon} alt="" width={74} height={74} />
                 <h3>{service.title}</h3>
+                <span className={styles.cardLine} aria-hidden="true" />
                 <p>{service.description}</p>
               </article>
             ))}
