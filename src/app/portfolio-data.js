@@ -20,6 +20,16 @@ export const projects = [
     galleryHeights: [12373],
   },
   {
+    slug: "music-event-campaigns-gold-felicia",
+    cardTitle: "Gold Felicia — Music Event Campaigns",
+    title: "Music Event Campaigns — Gold Felicia",
+    category: "Event Campaign Design",
+    image: "/images/portfolio/music-event-campaigns-gold-felicia.jpg",
+    description:
+      "A bold visual campaign for Gold Felicia's live music events, uniting artist imagery, dramatic typography and premium nightlife styling across promotional formats.",
+    galleryHeights: [9473],
+  },
+  {
     slug: "gold-felicia-photo-editing",
     cardTitle: "Gold Felicia — Photo Editing & Design",
     title: "Photo Editing & Design — Gold Felicia Cabaret Artists",
@@ -78,16 +88,6 @@ export const projects = [
     description:
       "A bright social media campaign for a virtual internship fair, designed to connect students and graduates with companies through clear, engaging event communication.",
     galleryHeights: [9601],
-  },
-  {
-    slug: "music-event-campaigns-gold-felicia",
-    cardTitle: "Gold Felicia — Music Event Campaigns",
-    title: "Music Event Campaigns — Gold Felicia",
-    category: "Event Campaign Design",
-    image: "/images/portfolio/music-event-campaigns-gold-felicia.jpg",
-    description:
-      "A bold visual campaign for Gold Felicia's live music events, uniting artist imagery, dramatic typography and premium nightlife styling across promotional formats.",
-    galleryHeights: [9473],
   },
 ];
 
