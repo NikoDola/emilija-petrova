@@ -168,6 +168,7 @@
   width: 29px;
   height: 29px;
   object-fit: contain;
+  filter: brightness(0) saturate(100%);
 }
 
 .heroSocials a:hover {
