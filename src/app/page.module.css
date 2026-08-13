@@ -671,7 +671,9 @@
 }
 
 .contact {
+  position: relative;
   display: grid;
+  overflow: hidden;
   min-height: 620px;
   grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
   align-items: center;
@@ -682,9 +684,15 @@
     linear-gradient(90deg, #0d0d1d 0%, #07070f 54%, #020204 100%);
 }
 
+.contactContent {
+  position: relative;
+  z-index: 1;
+}
+
 .contact h2 {
   color: #f5f4f8;
   font-size: clamp(2.7rem, 5vw, 4.2rem);
+  letter-spacing: 0.025em;
 }
 
 .contactIntro {
@@ -797,15 +805,20 @@
 }
 
 .contactMark {
-  opacity: 0.92;
+  position: absolute;
+  z-index: 0;
+  top: 10%;
+  right: 0;
+  width: min(22vw, 600px);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .contactMark img {
   display: block;
-  width: min(100%, 310px);
+  width: 100%;
   height: auto;
-  margin: 0 auto;
-  filter: drop-shadow(0 0 34px rgba(35, 184, 224, 0.08));
+  filter: drop-shadow(0 0 28px rgba(35, 184, 224, 0.08));
 }
 
 .footer {

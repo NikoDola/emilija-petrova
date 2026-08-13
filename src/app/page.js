@@ -254,7 +254,7 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <span>Softwares</span>
+                  <span>Designing tools</span>
                 </div>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function Home() {
           </div>
 
           <div className={styles.contactMark} aria-hidden="true">
-            <Image src="/images/personal/logo.svg" alt="" width={310} height={300} />
+            <Image src="/images/personal/logo-outline.svg" alt="" width={464} height={672} />
           </div>
         </section>
       </div>
