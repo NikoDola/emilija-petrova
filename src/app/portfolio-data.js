@@ -10,6 +10,16 @@ export const projects = [
     galleryHeights: [1472, 1013, 1013, 1013, 1013, 1013, 1013, 2270, 2075, 1013, 1013, 231],
   },
   {
+    slug: "restaurant-menu-gold-felicia",
+    cardTitle: "Gold Felicia — Restaurant Menu Design",
+    title: "Restaurant Menu Design — Gold Felicia",
+    category: "Menu & Print Design",
+    image: "/images/portfolio/restaurant-menu-gold-felicia.jpg",
+    description:
+      "An elegant restaurant menu for Gold Felicia, combining refined typography, rich food photography and a premium black-and-gold visual language.",
+    galleryHeights: [12373],
+  },
+  {
     slug: "gold-felicia-photo-editing",
     cardTitle: "Gold Felicia — Photo Editing & Design",
     title: "Photo Editing & Design — Gold Felicia Cabaret Artists",
@@ -58,6 +68,26 @@ export const projects = [
     description:
       "A cohesive brand and social media direction for a safety specialist, translating technical expertise into clear and trustworthy communication.",
     galleryHeights: [8271],
+  },
+  {
+    slug: "virtual-internship-fair-social-media",
+    cardTitle: "Virtual Internship Fair — Social Media Design",
+    title: "Virtual Internship Fair — Social Media Design",
+    category: "Social Media Design",
+    image: "/images/portfolio/virtual-internship-fair.jpg",
+    description:
+      "A bright social media campaign for a virtual internship fair, designed to connect students and graduates with companies through clear, engaging event communication.",
+    galleryHeights: [9601],
+  },
+  {
+    slug: "online-event-social-media",
+    cardTitle: "Online Event — Social Media Design",
+    title: "Online Event — Social Media Design",
+    category: "Social Media Design",
+    image: "/images/portfolio/online-event-social-media.jpg",
+    description:
+      "A cohesive set of social media visuals for an online career panel, balancing approachable photography, bold typography and clear event information.",
+    galleryHeights: [6646],
   },
 ];
 

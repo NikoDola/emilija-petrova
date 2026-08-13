@@ -199,7 +199,6 @@ export default function Home() {
               <article className={styles.serviceCard} key={service.title}>
                 <Image src={service.icon} alt="" width={74} height={74} />
                 <h3>{service.title}</h3>
-                <span className={styles.cardLine} aria-hidden="true" />
                 <p>{service.description}</p>
               </article>
             ))}
@@ -234,14 +233,15 @@ export default function Home() {
                 <div className={styles.programCard}>
                   <div className={styles.programIcons}>
                     {softwares.map((software) => (
-                      <Image
-                        key={software.name}
-                        src={software.icon}
-                        alt={software.name}
-                        title={software.name}
-                        width={43}
-                        height={43}
-                      />
+                      <span className={styles.programIcon} key={software.name}>
+                        <Image
+                          src={software.icon}
+                          alt={software.name}
+                          title={software.name}
+                          width={43}
+                          height={43}
+                        />
+                      </span>
                     ))}
                   </div>
                   <span>Softwares</span>
@@ -249,8 +249,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles.aboutPortrait}>
-              <Portrait />
+            <div className={styles.aboutMark}>
+              <Image
+                src="/images/personal/logo.svg"
+                alt="Emilija Petrova"
+                width={390}
+                height={378}
+                sizes="(max-width: 720px) 72vw, 390px"
+              />
             </div>
           </div>
         </section>

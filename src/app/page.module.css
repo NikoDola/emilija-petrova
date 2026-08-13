@@ -432,15 +432,9 @@
   text-wrap: balance;
 }
 
-.cardLine {
-  width: 74px;
-  height: 1px;
-  margin: 14px 0;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-}
-
 .serviceCard p {
   max-width: 210px;
+  margin-top: 18px;
   color: #d4d2dd;
   font-size: 0.69rem;
   line-height: 1.35;
@@ -449,7 +443,6 @@
 .about {
   min-height: 700px;
   padding: 86px 24px 0;
-  border-bottom: 3px solid #079bd8;
   background:
     radial-gradient(circle at 12% 70%, rgba(50, 34, 112, 0.16), transparent 26rem),
     linear-gradient(90deg, #0d0d1d 0%, #07070f 55%, #020204 100%);
@@ -539,21 +532,45 @@
 }
 
 .programIcons {
-  display: flex;
+  display: grid;
   width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 10px;
 }
 
-.programIcons img {
-  width: 42px;
-  height: 42px;
+.programIcon {
+  display: grid;
+  width: min(100%, 58px);
+  aspect-ratio: 1;
+  justify-self: center;
+  place-items: center;
+  border: 1px solid rgba(116, 213, 241, 0.48);
+  border-radius: 16px;
+  background: rgba(19, 18, 38, 0.88);
+  box-shadow:
+    0 9px 22px rgba(0, 0, 0, 0.3),
+    0 0 18px rgba(53, 189, 230, 0.12);
+}
+
+.programIcon img {
+  width: 72%;
+  height: 72%;
   object-fit: contain;
 }
 
-.aboutPortrait {
-  align-self: end;
+.aboutMark {
+  display: grid;
+  align-self: center;
+  place-items: center;
+  padding-bottom: 48px;
+}
+
+.aboutMark img {
+  display: block;
+  width: min(100%, 390px);
+  height: auto;
+  filter: drop-shadow(0 0 38px rgba(35, 184, 224, 0.13));
 }
 
 .portfolio {
@@ -865,12 +882,12 @@
   }
 
   .programIcons {
-    gap: 12px;
+    gap: 6px;
   }
 
-  .programIcons img {
-    width: 36px;
-    height: 36px;
+  .programIcon {
+    width: min(100%, 50px);
+    border-radius: 14px;
   }
 
   .portfolioGrid {
@@ -1083,8 +1100,13 @@
     border-radius: 24px;
   }
 
-  .aboutPortrait {
+  .aboutMark {
     margin-top: 28px;
+    padding-bottom: 64px;
+  }
+
+  .aboutMark img {
+    width: min(72vw, 360px);
   }
 
   .portfolioGrid {
@@ -1174,10 +1196,6 @@
   .experienceCard,
   .programCard {
     min-height: 140px;
-  }
-
-  .programIcons {
-    flex-wrap: wrap;
   }
 
   .contactSocials {
