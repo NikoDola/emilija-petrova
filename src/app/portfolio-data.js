@@ -80,14 +80,14 @@ export const projects = [
     galleryHeights: [9601],
   },
   {
-    slug: "online-event-social-media",
-    cardTitle: "Online Event — Social Media Design",
-    title: "Online Event — Social Media Design",
-    category: "Social Media Design",
-    image: "/images/portfolio/online-event-social-media.jpg",
+    slug: "music-event-campaigns-gold-felicia",
+    cardTitle: "Gold Felicia — Music Event Campaigns",
+    title: "Music Event Campaigns — Gold Felicia",
+    category: "Event Campaign Design",
+    image: "/images/portfolio/music-event-campaigns-gold-felicia.jpg",
     description:
-      "A cohesive set of social media visuals for an online career panel, balancing approachable photography, bold typography and clear event information.",
-    galleryHeights: [6646],
+      "A bold visual campaign for Gold Felicia's live music events, uniting artist imagery, dramatic typography and premium nightlife styling across promotional formats.",
+    galleryHeights: [9473],
   },
 ];
 
