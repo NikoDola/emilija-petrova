@@ -73,11 +73,6 @@ export default async function ProjectPage({ params }) {
           </p>
         </div>
 
-        <div className={styles.details}>
-          <p className={styles.detailLabel}>Project overview</p>
-          <p className={styles.description}>{project.description}</p>
-        </div>
-
         <div className={styles.gallery} aria-label={`${project.title} project gallery`}>
           {project.galleryHeights.map((height, index) => (
             <Image
