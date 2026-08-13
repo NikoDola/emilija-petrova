@@ -424,7 +424,6 @@
 
 .serviceCard h3 {
   max-width: 170px;
-  min-height: 44px;
   margin-top: 14px;
   font-size: 1.12rem;
   font-weight: 650;
@@ -1088,41 +1087,19 @@
 
   .aboutCopy h2 {
     margin-left: 0;
+    text-align: center;
   }
 
   .aboutPanel {
-    position: relative;
-    overflow: hidden;
     margin-left: 0;
     padding: 26px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
-    isolation: isolate;
     background: linear-gradient(115deg, rgba(22, 20, 40, 0.68), rgba(10, 10, 21, 0.58));
     box-shadow: 0 22px 52px rgba(0, 0, 0, 0.24);
+    text-align: center;
     -webkit-backdrop-filter: blur(14px) saturate(125%);
     backdrop-filter: blur(14px) saturate(125%);
-  }
-
-  .aboutPanel::before {
-    position: absolute;
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    width: min(82%, 330px);
-    aspect-ratio: 66 / 64;
-    content: "";
-    opacity: 0.48;
-    background: url("/images/personal/logo.svg") center / contain no-repeat;
-    filter: blur(7px) saturate(115%);
-    transform: translate(-50%, -50%) scale(1.06);
-    pointer-events: none;
-  }
-
-  .aboutPanel p {
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.42);
   }
 
   .aboutStats {
