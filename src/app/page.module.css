@@ -234,10 +234,10 @@
 .neonLine {
   position: absolute;
   z-index: 4;
-  top: 89%;
+  top: 90%;
   left: 50%;
   display: block;
-  width: 120%;
+  width: 115%;
   height: auto;
   transform: translateX(-50%);
   pointer-events: none;
@@ -425,7 +425,7 @@
 .serviceCard h3 {
   max-width: 170px;
   min-height: 44px;
-  margin-top: 8px;
+  margin-top: 14px;
   font-size: 1.12rem;
   font-weight: 650;
   line-height: 1.08;
