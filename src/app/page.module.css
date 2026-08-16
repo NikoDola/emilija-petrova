@@ -406,7 +406,7 @@
 
 .sectionHeading p {
   margin-top: 28px;
-  color: #eeedf4;
+  color: var(--cyan);
   font-size: 1rem;
   font-style: italic;
   line-height: 1.6;

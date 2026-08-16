@@ -1,9 +1,0 @@
-
-> emilija-petrova@0.1.0 start
-> next start -p 3002
-
-▲ Next.js 16.3.0
-- Local:         http://localhost:3002
-- Network:       http://192.168.56.1:3002
-✓ Ready in 272ms
-✓ Running next.config.mjs took 26ms
