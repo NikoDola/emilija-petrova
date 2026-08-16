@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedHeading from "./animated-heading";
 import { projects } from "./portfolio-data";
 import ExperienceCounter from "./experience-counter";
 import HomeNavigation from "./home-navigation";
@@ -195,7 +196,7 @@ export default function Home() {
 
         <section className={`${styles.section} ${styles.services}`} id="services">
           <div className={styles.sectionHeading}>
-            <h2>Services</h2>
+            <AnimatedHeading>Services</AnimatedHeading>
             <p>Creative design solutions focused on strong, consistent and memorable visual identities.</p>
           </div>
 
@@ -218,21 +219,33 @@ export default function Home() {
         <section className={`${styles.section} ${styles.about}`} id="about">
           <div className={styles.aboutContent}>
             <div className={styles.aboutCopy}>
-              <h2>About me</h2>
-              <div className={styles.aboutPanel}>
-                <p>
-                  I&apos;m a graphic and visual designer with a strong interest in branding,
-                  visual identity and marketing design.
-                </p>
-                <p>
-                  Over the years, I&apos;ve worked across digital, print, social media and
-                  promotional campaigns, always focusing on creating visuals that are clear,
-                  consistent and visually engaging.
-                </p>
-                <p>
-                  I enjoy exploring new ideas, developing strong concepts and continuously
-                  evolving my skills as a designer.
-                </p>
+              <AnimatedHeading>About me</AnimatedHeading>
+              <div className={styles.aboutMain}>
+                <div className={styles.aboutPanel}>
+                  <p>
+                    I&apos;m a graphic and visual designer with a strong interest in branding,
+                    visual identity and marketing design.
+                  </p>
+                  <p>
+                    Over the years, I&apos;ve worked across digital, print, social media and
+                    promotional campaigns, always focusing on creating visuals that are clear,
+                    consistent and visually engaging.
+                  </p>
+                  <p>
+                    I enjoy exploring new ideas, developing strong concepts and continuously
+                    evolving my skills as a designer.
+                  </p>
+                </div>
+
+                <div className={styles.aboutMark}>
+                  <Image
+                    src="/images/personal/logo.svg"
+                    alt="Emilija Petrova"
+                    width={390}
+                    height={378}
+                    sizes="(max-width: 720px) 72vw, 390px"
+                  />
+                </div>
               </div>
 
               <div className={styles.aboutStats}>
@@ -254,26 +267,16 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <span>Designing tools</span>
+                  <span style={{ textAlign: "left", alignSelf: "stretch" }}>Designing tools</span>
                 </div>
               </div>
-            </div>
-
-            <div className={styles.aboutMark}>
-              <Image
-                src="/images/personal/logo.svg"
-                alt="Emilija Petrova"
-                width={390}
-                height={378}
-                sizes="(max-width: 720px) 72vw, 390px"
-              />
             </div>
           </div>
         </section>
 
         <section className={`${styles.section} ${styles.portfolio}`} id="portfolio">
           <div className={styles.sectionHeading}>
-            <h2>Portfolio</h2>
+            <AnimatedHeading>Portfolio</AnimatedHeading>
             <p>A selection of identity, logo, campaign and visual design projects.</p>
           </div>
 
@@ -302,7 +305,7 @@ export default function Home() {
 
         <section className={`${styles.section} ${styles.contact}`} id="contact">
           <div className={styles.contactContent}>
-            <h2>Contact</h2>
+            <AnimatedHeading>Contact</AnimatedHeading>
             <p className={styles.contactIntro}>
               Have a project on mind or want to work together?
               <br />
