@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "../../portfolio-data";
 import ScrollToTop from "../../scroll-to-top";
+import { openGraphImage } from "../../site-metadata";
 import styles from "./project.module.css";
 
 export const dynamicParams = false;
@@ -22,6 +23,22 @@ export async function generateMetadata({ params }) {
   return {
     title: project.cardTitle,
     description: project.description,
+    alternates: {
+      canonical: `/portfolio/${project.slug}`,
+    },
+    openGraph: {
+      title: project.cardTitle,
+      description: project.description,
+      type: "website",
+      url: `/portfolio/${project.slug}`,
+      images: [openGraphImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.cardTitle,
+      description: project.description,
+      images: [openGraphImage],
+    },
   };
 }
 
@@ -76,32 +93,19 @@ export default async function ProjectPage({ params }) {
         <div className={styles.gallery} aria-label={`${project.title} project gallery`}>
           {project.galleryHeights.map((height, index) => {
             const imageNumber = String(index + 1).padStart(2, "0");
-            const image = (
+            return (
               <Image
                 className={styles.galleryImage}
                 src={`/images/projects/${project.slug}/${imageNumber}.avif`}
                 alt={`${project.title}, project image ${index + 1}`}
-                width={1400}
+                width={project.galleryWidth || 1400}
                 height={height}
                 sizes="(max-width: 480px) 360px, (max-width: 768px) 720px, (max-width: 1160px) 1040px, 1120px"
                 loading={index === 0 ? "eager" : "lazy"}
                 fetchPriority={index === 0 ? "high" : "low"}
-                quality={60}
+                unoptimized
                 key={`${project.slug}-${imageNumber}`}
               />
-            );
-
-            if (index !== 0) return image;
-
-            return (
-              <picture className={styles.galleryPicture} key={`${project.slug}-${imageNumber}`}>
-                <source
-                  media="(max-width: 480px)"
-                  srcSet={`/images/projects/${project.slug}/01-mobile.avif`}
-                  type="image/avif"
-                />
-                {image}
-              </picture>
             );
           })}
         </div>

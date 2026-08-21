@@ -69,20 +69,12 @@ try {
     const outputPath = path.join(stagingDirectory, `${imageNumber}.avif`);
     const outputInfo = await sharp(sourceBuffer)
       .rotate()
-      .resize({ width: 1400, withoutEnlargement: true })
-      .avif({ quality: 60, effort: 6, bitdepth: 8 })
+      .avif({ quality: 90, effort: 6, bitdepth: 8 })
       .toFile(outputPath);
 
     galleryHeights.push(outputInfo.height);
     console.log(`${imageNumber}.avif: ${outputInfo.width}x${outputInfo.height}`);
 
-    if (index === 0) {
-      await sharp(sourceBuffer)
-        .rotate()
-        .resize({ width: 480, withoutEnlargement: true })
-        .avif({ quality: 55, effort: 6, bitdepth: 8 })
-        .toFile(path.join(stagingDirectory, "01-mobile.avif"));
-    }
   }
 
   await mkdir(targetDirectory, { recursive: true });
