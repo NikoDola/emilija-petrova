@@ -13,35 +13,35 @@ const services = [
     titleLines: ["Branding &", "Logo Design"],
     description:
       "Logo design, visual identity, brand elements, color and typography systems, and basic brand guidelines.",
-    icon: "/images/personal/brand-icon.svg",
+    icon: "/images/personal/brand-icon.avif",
   },
   {
     title: "Marketing Design",
     titleLines: ["Marketing", "Design"],
     description:
       "Campaign visuals, promotional materials, event campaigns, advertising creatives, and banners.",
-    icon: "/images/personal/marketing-icon.svg",
+    icon: "/images/personal/marketing-icon.avif",
   },
   {
     title: "Social Media",
     titleLines: ["Social", "Media"],
     description:
       "Social media posts, stories, campaign sets, digital ads, and promotional content.",
-    icon: "/images/personal/social-media-icon.svg",
+    icon: "/images/personal/social-media-icon.avif",
   },
   {
     title: "Print Design",
     titleLines: ["Print", "Design"],
     description:
       "Menus, flyers, posters, brochures, invitations, promotional print, and editorial materials.",
-    icon: "/images/personal/print-design-icon.svg",
+    icon: "/images/personal/print-design-icon.avif",
   },
   {
     title: "Digital & Web Visual Design",
     titleLines: ["Digital & Web", "Visual Design"],
     description:
       "Website visuals, landing pages, web banners, UI visual concepts, and digital experiences.",
-    icon: "/images/personal/digital-web-cion.svg",
+    icon: "/images/personal/digital-web-cion.avif",
   },
 ];
 
@@ -50,7 +50,7 @@ const softwares = [
   { name: "Adobe Illustrator", icon: "/images/personal/adobe-illustrator-icon.svg" },
   { name: "Adobe After Effects", icon: "/images/personal/adobe-after-effect-icon.svg" },
   { name: "Adobe InDesign", icon: "/images/personal/adobe-indesign-icon.svg" },
-  { name: "Figma", icon: "/images/personal/figma-icon.svg" },
+  { name: "Figma", icon: "/images/personal/figma-icon.avif" },
 ];
 
 const orbitPoints = softwares.map((_, index) => {
@@ -122,16 +122,24 @@ function Portrait({ eager = false, showSoftwareOrbit = false }) {
           ))}
         </div>
       )}
-      <Image
-        className={styles.portrait}
-        src="/images/personal/profile-image.avif"
-        alt="Emilija Petrova"
-        width={480}
-        height={620}
-        loading={eager ? "eager" : "lazy"}
-        fetchPriority={eager ? "high" : undefined}
-        sizes="(max-width: 720px) 78vw, 430px"
-      />
+      <picture className={styles.portraitPicture}>
+        <source
+          media="(max-width: 720px)"
+          srcSet="/images/personal/profile-image-mobile.avif"
+          type="image/avif"
+        />
+        <Image
+          className={styles.portrait}
+          src="/images/personal/profile-image.avif"
+          alt="Emilija Petrova"
+          width={815}
+          height={956}
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : undefined}
+          quality={60}
+          sizes="(max-width: 720px) 78vw, 430px"
+        />
+      </picture>
       <Image
         className={styles.neonLine}
         src="/images/personal/neon-line.avif"
@@ -147,6 +155,14 @@ function Portrait({ eager = false, showSoftwareOrbit = false }) {
 export default function Home() {
   return (
     <main className={styles.page}>
+      <link
+        rel="preload"
+        as="image"
+        href="/images/personal/profile-image-mobile.avif"
+        type="image/avif"
+        media="(max-width: 720px)"
+        fetchPriority="high"
+      />
       <a className={styles.skipLink} href="#main-content">
         Skip to content
       </a>
@@ -169,7 +185,7 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="Emilija Petrova on Behance"
               >
-                <Image src="/images/personal/social-behance.svg" alt="" width={40} height={40} />
+                <Image src="/images/personal/social-behance.avif" alt="" width={40} height={40} />
               </a>
               <a
                 href="https://www.linkedin.com/in/petrovaemilija/"
@@ -177,7 +193,7 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="Emilija Petrova on LinkedIn"
               >
-                <Image src="/images/personal/social-linkedin.svg" alt="" width={42} height={42} />
+                <Image src="/images/personal/social-linkedin.avif" alt="" width={42} height={42} />
               </a>
             </div>
 
@@ -313,7 +329,7 @@ export default function Home() {
             </p>
 
             <a className={styles.emailLink} href="mailto:emaa.petrova@gmail.com">
-              <Image src="/images/personal/email.svg" alt="" width={34} height={34} />
+              <Image src="/images/personal/email.avif" alt="" width={34} height={34} />
               <span>emaa.petrova@gmail.com</span>
               <ArrowUpRight />
             </a>
@@ -326,12 +342,12 @@ export default function Home() {
 
             <div className={styles.contactSocials}>
               <a href="https://www.behance.net/emilijapetrova" target="_blank" rel="noreferrer">
-                <Image src="/images/personal/social-behance.svg" alt="" width={32} height={32} />
+                <Image src="/images/personal/social-behance.avif" alt="" width={32} height={32} />
                 Behance
                 <ArrowUpRight />
               </a>
               <a href="https://www.linkedin.com/in/petrovaemilija/" target="_blank" rel="noreferrer">
-                <Image src="/images/personal/social-linkedin.svg" alt="" width={32} height={32} />
+                <Image src="/images/personal/social-linkedin.avif" alt="" width={32} height={32} />
                 LinkedIn
                 <ArrowUpRight />
               </a>

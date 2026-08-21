@@ -74,19 +74,36 @@ export default async function ProjectPage({ params }) {
         </div>
 
         <div className={styles.gallery} aria-label={`${project.title} project gallery`}>
-          {project.galleryHeights.map((height, index) => (
-            <Image
-              className={styles.galleryImage}
-              src={`/images/projects/${project.slug}/${String(index + 1).padStart(2, "0")}.avif`}
-              alt={`${project.title}, project image ${index + 1}`}
-              width={1400}
-              height={height}
-              sizes="(max-width: 1160px) 100vw, 1120px"
-              loading={index === 0 ? "eager" : "lazy"}
-              unoptimized
-              key={`${project.slug}-${index + 1}`}
-            />
-          ))}
+          {project.galleryHeights.map((height, index) => {
+            const imageNumber = String(index + 1).padStart(2, "0");
+            const image = (
+              <Image
+                className={styles.galleryImage}
+                src={`/images/projects/${project.slug}/${imageNumber}.avif`}
+                alt={`${project.title}, project image ${index + 1}`}
+                width={1400}
+                height={height}
+                sizes="(max-width: 480px) 360px, (max-width: 768px) 720px, (max-width: 1160px) 1040px, 1120px"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
+                quality={60}
+                key={`${project.slug}-${imageNumber}`}
+              />
+            );
+
+            if (index !== 0) return image;
+
+            return (
+              <picture className={styles.galleryPicture} key={`${project.slug}-${imageNumber}`}>
+                <source
+                  media="(max-width: 480px)"
+                  srcSet={`/images/projects/${project.slug}/01-mobile.avif`}
+                  type="image/avif"
+                />
+                {image}
+              </picture>
+            );
+          })}
         </div>
 
         <Link className={styles.nextProject} href={`/portfolio/${nextProject.slug}`}>

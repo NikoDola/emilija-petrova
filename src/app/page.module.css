@@ -354,6 +354,11 @@
   object-fit: contain;
 }
 
+.portraitPicture {
+  display: block;
+  width: 100%;
+}
+
 .services {
   min-height: 780px;
   padding: 88px 24px 108px;

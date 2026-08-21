@@ -4,14 +4,9 @@ import "./globals.css";
 const dmSans = localFont({
   src: [
     {
-      path: "./fonts/DMSans-Variable.ttf",
+      path: "./fonts/DMSans-Variable-Latin-Cyrillic.woff2",
       weight: "100 1000",
       style: "normal",
-    },
-    {
-      path: "./fonts/DMSans-Italic-Variable.ttf",
-      weight: "100 1000",
-      style: "italic",
     },
   ],
   display: "swap",

@@ -4,7 +4,7 @@ import sharp from "sharp";
 
 const imagesRoot = path.resolve("public/images");
 
-async function getJpgFiles(directory) {
+async function getRasterFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
 
@@ -12,8 +12,8 @@ async function getJpgFiles(directory) {
     const entryPath = path.join(directory, entry.name);
 
     if (entry.isDirectory()) {
-      files.push(...(await getJpgFiles(entryPath)));
-    } else if (/\.jpe?g$/i.test(entry.name)) {
+      files.push(...(await getRasterFiles(entryPath)));
+    } else if (/\.(?:jpe?g|png)$/i.test(entry.name) && entry.name !== "og-image.jpg") {
       files.push(entryPath);
     }
   }
@@ -21,15 +21,17 @@ async function getJpgFiles(directory) {
   return files;
 }
 
-const jpgFiles = await getJpgFiles(imagesRoot);
+const rasterFiles = await getRasterFiles(imagesRoot);
 
 await Promise.all(
-  jpgFiles.map(async (jpgPath) => {
-    const avifPath = jpgPath.replace(/\.jpe?g$/i, ".avif");
+  rasterFiles.map(async (rasterPath) => {
+    const avifPath = rasterPath.replace(/\.(?:jpe?g|png)$/i, ".avif");
 
-    await sharp(jpgPath).avif({ quality: 60, effort: 4 }).toFile(avifPath);
-    console.log(`${path.relative(process.cwd(), jpgPath)} -> ${path.relative(process.cwd(), avifPath)}`);
+    await sharp(rasterPath).avif({ quality: 60, effort: 4 }).toFile(avifPath);
+    console.log(`${path.relative(process.cwd(), rasterPath)} -> ${path.relative(process.cwd(), avifPath)}`);
   }),
 );
 
-console.log(`Converted ${jpgFiles.length} JPG image${jpgFiles.length === 1 ? "" : "s"} to AVIF.`);
+console.log(
+  `Converted ${rasterFiles.length} raster image${rasterFiles.length === 1 ? "" : "s"} to AVIF.`,
+);

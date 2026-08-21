@@ -125,6 +125,10 @@
   height: auto;
 }
 
+.galleryPicture {
+  display: block;
+}
+
 .nextProject {
   display: flex;
   align-items: center;
