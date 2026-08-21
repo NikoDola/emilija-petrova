@@ -77,7 +77,7 @@ export default async function ProjectPage({ params }) {
           {project.galleryHeights.map((height, index) => (
             <Image
               className={styles.galleryImage}
-              src={`/images/projects/${project.slug}/${String(index + 1).padStart(2, "0")}.jpg`}
+              src={`/images/projects/${project.slug}/${String(index + 1).padStart(2, "0")}.avif`}
               alt={`${project.title}, project image ${index + 1}`}
               width={1400}
               height={height}

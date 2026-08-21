@@ -429,7 +429,7 @@
   justify-content: flex-start;
   padding: 22px 20px 28px;
   border: 1px solid rgba(255, 255, 255, 0.02);
- border-radius: 0 15% 0% 15%;
+  border-radius: 28px 28px 0 0;
   text-align: center;
   background: linear-gradient(145deg, #1c1a2e, #171625);
   box-shadow: 0 24px 55px rgba(0, 0, 0, 0.18);
@@ -643,7 +643,7 @@
 .projectCard {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.025);
-  border-radius: 0 15% 0% 15%;
+  border-radius: 28px 28px 0 0;
   background: #24203d;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
   transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
@@ -1181,6 +1181,11 @@
   .programCard,
   .programIcons {
     width: 100%;
+  }
+
+  .programIcons {
+    justify-content: space-between;
+    gap: 0;
   }
 
   .aboutMark {
