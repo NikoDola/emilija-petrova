@@ -17,7 +17,7 @@ export const projects = [
     image: "/images/portfolio/restaurant-menu-gold-felicia.avif",
     description:
       "An elegant restaurant menu for Gold Felicia, combining refined typography, rich food photography and a premium black-and-gold visual language.",
-    galleryHeights: [12373],
+    galleryHeights: [1035, 167, 1035, 1035, 1035, 1035, 1035, 1035, 1035, 167, 1035, 1035, 1035, 201],
   },
   {
     slug: "music-event-campaigns-gold-felicia",

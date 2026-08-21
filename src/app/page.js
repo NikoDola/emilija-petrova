@@ -239,17 +239,17 @@ export default function Home() {
               <div className={styles.aboutMain}>
                 <div className={styles.aboutPanel}>
                   <p>
-                    I&apos;m a graphic and visual designer with a strong interest in branding,
-                    visual identity and marketing design.
+                    I&apos;m a Graphic &amp; Visual Designer with 5 years of experience in brand
+                    identity, marketing design and visual communication.
                   </p>
                   <p>
-                    Over the years, I&apos;ve worked across digital, print, social media and
-                    promotional campaigns, always focusing on creating visuals that are clear,
-                    consistent and visually engaging.
+                    I&apos;ve worked across digital, social media, promotional campaigns and brand
+                    applications, creating visually strong design across different formats.
                   </p>
                   <p>
-                    I enjoy exploring new ideas, developing strong concepts and continuously
-                    evolving my skills as a designer.
+                    My approach combines attention to detail, practical thinking and a strong
+                    visual sense, with a focus on creating work that feels clear, intentional and
+                    well resolved.
                   </p>
                 </div>
 
@@ -323,7 +323,7 @@ export default function Home() {
           <div className={styles.contactContent}>
             <AnimatedHeading>Contact</AnimatedHeading>
             <p className={styles.contactIntro}>
-              Have a project on mind or want to work together?
+              Have a project in mind or want to work together?
               <br />
               Let&apos;s <span>get in touch.</span>
             </p>
